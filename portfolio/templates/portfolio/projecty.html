@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main>
+  <section class="text" data-rellax-zindex="2">
+    <div class="text-content" data-rellax-zindex="2">
+      <h3>Moje projekty</h3>
+      <p>
+        Jeśli szukasz człowieka, który wciąż się rozwija, projekty traktuje priorytetowo, ale jednocześnie nie obiecuje
+        stworzenia nowego systemu bankowości, pisz śmiało! Niejeden już próbował i wrócił do domu z pełnym portfelem i
+        piękną stroną!
+      </p>
+    </div>
+  </section>
+
+  <div class="cards-list">
+    {% for project in projects %}
+    {% include "portfolio/includes/project.html" %}
+    {% endfor %}
+  </div>
+
+
+  <section class="text" data-rellax-zindex="2">
+    <div class="text-content" data-rellax-zindex="2">
+      <p>
+        Pozbądź się bólu głowy i dołącz do sekcji projekty zrealizowane!
+      </p>
+      <a class="link team" href="{% url "contact" %}">Skontaktuj się</a>
+    </div>
+  </section>
+
+  {% endblock  %}

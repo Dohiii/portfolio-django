@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main>
+  <div id="container">
+    <h1>Skontaktuj się</h1>
+    <form action="https://formspree.io/f/xqkwggvj" method="POST">
+      <div class="form-row">
+        <input class="name" type="text" name="name" required placeholder="Imię" />
+        <input class="email" type="email" name="email" required placeholder="Email" />
+      </div>
+
+      <textarea class="form-row" type="textarea" name="textarea" required placeholder="Mam pytanie..."></textarea>
+      <input type="text" name="_honey" style="display: none" />
+      <input type="hidden" name="_captcha" value="false" />
+      <!-- <input type="hidden" name="_next" value="https://dorokhov-portfolio.pl/thanks.html"> -->
+      <div class="submit">
+        <button id="form_button" type="submit">Wyślij</button>
+      </div>
+    </form>
+  </div>
+  <div class="line"></div>
+</main>
+
+
+{% endblock  %}

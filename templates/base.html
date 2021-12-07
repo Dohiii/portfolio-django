@@ -1,0 +1,75 @@
+{% load static %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script async custom-element="amp-fx-collection" src="https://cdn.ampproject.org/v0/amp-fx-collection-0.1.js">
+    </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <title>{% block title %}{% endblock  %}</title>
+    {% block css_files %}{% endblock  %}
+</head>
+
+
+<body>
+    <header class="header">
+        <nav>
+            <div class="navbar" id="navbar">
+                <a class="logo" href="{% url "index" %}">Valerii Dorokhov</a>
+                <ul class="nav-list">
+                    <li><a class="link" href="{% url "index" %}">O Mnie</a></li>
+                    <li><a class="link" href="{% url "projecty" %}">Projekty</a></li>
+                    <li><a class="link" href="{% url "contact" %}">Kontakt</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+    {% block content %}{% endblock  %}
+
+
+    <footer class="footer">
+
+        <ul class="social">
+            <li><a class="link" href="https://github.com/Dohiii"><i class="fab fa-github "></i></a></li>
+            <li><a class="link" href="https://www.linkedin.com/in/valerii-dorokhov-534312211/"><i
+                        class="fab fa-linkedin "></i></a></li>
+        </ul>
+        </div>
+    </footer>
+    <!-- partial -->
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
+    <script src="rellax.min.js"></script>
+    <script>
+        //default JS Setting
+        var rellax = new Rellax('.rellax', {
+            breakpoints: [576, 768, 1201, 1900]
+        });
+    </script>
+    <script>
+        //Enable Horizontal Parallax Scrolling
+        var rellax = new Rellax('.rellax', {
+            horizontal: true
+        });
+    </script>
+</body>
+
+</html>

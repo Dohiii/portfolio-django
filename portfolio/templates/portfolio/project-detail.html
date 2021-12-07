@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title%}
+My Post Title
+{% endblock %}
+
+{% block css_files %}
+<link rel="stylesheet" type="text/css" href="{% static 'project/project-detail.css' %}">
+{% endblock  %}
+
+{% block content %}
+
+<section class="flex-columns ">
+    <div class="row">
+        <div class="column">
+            <div class="column-1">
+                <h1>{{project.title}}</h1>
+                <a class="link team" href="{{project.link}}">Przejdź na stronę</a>
+                <p>{{project.content}} </p>
+                <a class="link team" href="{% url 'projecty' %}">Do projektów</a>
+            </div>
+
+        </div>
+        <div class="column image_detail">
+            <div class="column-2">
+                <img src="{{ project.image.url }}" />
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
